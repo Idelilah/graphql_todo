@@ -3,6 +3,9 @@ from graphene_django import DjangoObjectType
 
 from  .models import *
 
+
+
+"""Todo CRUD"""
 class CategoryType(DjangoObjectType):
     class Meta:
         model = category
@@ -75,6 +78,7 @@ class Mutation(graphene.ObjectType):
     create_todo = CreateTodo.Field()
     update_todo = UpdateTodo.Field()
     delete_todo = DeleteTodo.Field()
+
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
 
